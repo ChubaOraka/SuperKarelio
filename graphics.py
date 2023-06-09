@@ -334,6 +334,12 @@ class Canvas(tkinter.Canvas):
         self.key_presses = []
         return presses
 
+    def get_last_key_press(self):
+        key_presses = [key.keysym for key in self.get_new_key_presses()]
+        if key_presses:
+            return 'Arrow' + key_presses[-1]
+        return
+
     def create_button(self, title, location, **kwargs):
         """
         Adds a button to the canvas with the specified title at the specified location.  Buttons are added from left
@@ -660,6 +666,9 @@ class Canvas(tkinter.Canvas):
             obj: the text object for which to set the displayed text
             text: the new text for this graphical object to display
         """
+        self.itemconfig(obj, text=text)
+
+    def change_text(self, obj, text):
         self.itemconfig(obj, text=text)
 
     def get_text(self, obj):
