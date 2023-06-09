@@ -636,7 +636,7 @@ class Canvas(tkinter.Canvas):
         return super(Canvas, self).create_oval(
             x1, y1, x2, y2, fill=color, outline=color)
 
-    def create_text(self, x, y, text, anchor, font, color="black"):
+    def create_text(self, x, y, text, anchor="nw", font="Arial", color="black"):
         """
         Creates and returns a text graphical object on the screen at the specified location with the specified text.
         The specified x and y location is for the center of the text.  The text will be in size 13 font.
