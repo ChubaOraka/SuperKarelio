@@ -519,6 +519,7 @@ class Canvas(tkinter.Canvas):
             dy: the amount by which to change the object's y position
         """
         super(Canvas, self).move(obj, dx, dy)
+        self.update()
 
     def delete(self, obj):
         """
