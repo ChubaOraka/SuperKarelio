@@ -332,7 +332,7 @@ class Canvas(tkinter.Canvas):
         """
         presses = self.key_presses
         self.key_presses = []
-        return presses
+        return ['Arrow' + key.keysym for key in presses]
 
     def get_last_key_press(self):
         key_presses = [key.keysym for key in self.get_new_key_presses()]
